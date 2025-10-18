@@ -11,7 +11,8 @@ export const Nav = () => {
   return (
     <nav>
       <ul>
-        <li>
+        <li className="nav-brand">
+          <Link to={"/"}><img className="nav-logo" src="/logo.png" alt="Logo de la tienda" /></Link>
           <Link to={"/"}>Home</Link>
         </li>
         <li>
