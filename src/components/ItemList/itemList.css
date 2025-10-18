@@ -1,0 +1,13 @@
+.item-list-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	align-items: start;
+}
+
+/* Opcional: ajustar el enlace para que no rompa el layout */
+.item-list-grid > a {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
