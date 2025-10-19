@@ -16,10 +16,11 @@ nav ul {
 }
 
 .nav-logo {
-  height: 48px;
+  height: 50px;
   width: auto;
-  border-radius: 6px;
-  object-fit: contain;
+  border-radius: 15px;
+  object-fit: cover;
+  object-view-box: inset(25%);
 }
 
 nav li {
