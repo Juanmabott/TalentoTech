@@ -20,14 +20,6 @@ La aplicación simula un e-commerce donde se pueden visualizar prendas de forma 
 
 ---
 
-## ⚙️ Funcionalidades adicionales implementadas
-- 💾 **Persistencia del carrito** con `localStorage` para mantener el estado entre recargas.  
-- 🧩 **Desacoplamiento de la lógica de datos** mediante un servicio independiente (`ProductService.js`).  
-- 🧱 **Separación de responsabilidades**, organizando los componentes por rol (presentacional, contenedor, contexto, servicio, layout).  
-- 🔝 Inclusión de un componente `ScrollToTop` para mejorar la experiencia de navegación.  
-
----
-
 ## 🧵 Tecnologías y herramientas utilizadas
 | Herramienta / Librería | Uso principal |
 |--------------------------|----------------|
