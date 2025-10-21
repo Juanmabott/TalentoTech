@@ -24,3 +24,11 @@
   align-items: center;
   margin-top: 1rem;
 }
+
+.cart-item-qty {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: left;
+}
