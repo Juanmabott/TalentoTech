@@ -30,8 +30,9 @@ export const Cart = () => {
         ))}
       </ul>
       <div className="cart-footer">
-        <strong>Total: ${total.toFixed(2)}</strong>
         <button onClick={clearCart}>Vaciar carrito</button>
+
+        <strong>Total: ${total.toFixed(2)}</strong>
       </div>
     </section>
   );
