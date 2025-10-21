@@ -3,7 +3,7 @@ import "./Cart.css";
 import { useCartContext } from "../context/useCartContext";
 
 export const Cart = () => {
-  const { cart, clearCart } = useCartContext();
+  const { cart, clearCart, deleteItem } = useCartContext();
 
   if (!cart.length) {
     return (
@@ -24,6 +24,7 @@ export const Cart = () => {
             <div className="cart-item-left">
               <strong>{item.title}</strong>
               <div className="cart-item-qty">Cantidad: {item.quantity}</div>
+              <div className="btn btn-minus" onClick={() => deleteItem(item.id)}>- </div>
             </div>
             <div className="cart-item-right">${(item.price * item.quantity).toFixed(2)}</div>
           </li>

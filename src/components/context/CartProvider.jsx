@@ -8,6 +8,9 @@ export const CartProvider = ({ children }) => {
         return cart.some(item => item.id === id);
     };
 
+    const deleteItem = (id) => {
+        setCart(cart.filter(item => item.id !== id));
+    }
     const clearCart = () => {
         setCart([]);
     }
@@ -31,7 +34,8 @@ export const CartProvider = ({ children }) => {
         setCart,
         addItem,
         clearCart,
-        getTotalItems
+        getTotalItems,
+        deleteItem
     };
 
     return (
