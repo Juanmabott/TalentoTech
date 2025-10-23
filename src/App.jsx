@@ -16,23 +16,23 @@ function App() {
   return (
     <>
       <BrowserRouter>
-      <CartProvider>
-        <Header />
-        <div className="app-wrapper">
-          <Routes>
-            <Route
-              path="/"
-              element={<ItemListContainer titulo={"Soft"} />}
-            />
-            <Route
-              path="/category/:category"
-              element={<CategoryItemList />}
-            />
-            <Route path="/detail/:id" element={<ItemDetailContainer />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+        <CartProvider>
+          <Header />
+          <div className="app-wrapper">
+            <Routes>
+              <Route
+                path="/"
+                element={<ItemListContainer titulo={"Soft"} />}
+              />
+              <Route
+                path="/category/:category"
+                element={<CategoryItemList />}
+              />
+              <Route path="/detail/:id" element={<ItemDetailContainer />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </div>
           <Footer />
-        </div>
         </CartProvider>
       </BrowserRouter>
     </>
