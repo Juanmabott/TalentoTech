@@ -3,7 +3,7 @@ import "./Cart.css";
 import { useCartContext } from "../context/useCartContext";
 
 export const Cart = () => {
-  const { cart, clearCart, deleteItem } = useCartContext();
+  const { cart, clearCart, deleteItem, checkout,total , getTotalItems} = useCartContext();
 
   if (!cart.length) {
     return (
@@ -12,8 +12,6 @@ export const Cart = () => {
       </section>
     );
   }
-
-  const total = cart.reduce((s, item) => s + item.price * item.quantity, 0);
 
   return (
     <section className="cart">
@@ -32,8 +30,9 @@ export const Cart = () => {
       </ul>
       <div className="cart-footer">
         <button onClick={clearCart}>Vaciar carrito</button>
-
-        <strong>Total: ${total.toFixed(2)}</strong>
+        <button className="btn btn-primary" onClick={checkout}>Comprar</button>
+        <strong>Cantidad: {getTotalItems()}</strong>
+        <strong>Total: ${total().toFixed(2)}</strong>
       </div>
     </section>
   );

@@ -4,6 +4,8 @@ import { CartContext } from "./CartContext";
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
+    const total = () => cart.reduce((s, item) => s + item.price * item.quantity, 0);
+
     const exists = (id) => {
         return cart.some(item => item.id === id);
     };
@@ -28,6 +30,14 @@ export const CartProvider = ({ children }) => {
     const getTotalItems = () => {
         return cart.reduce((total, item) => total + item.quantity, 0);
     }
+    const checkout = () => {
+        const ok = confirm("seguro que quiere finalizar la compra?");
+        if (!ok) {
+            return;
+        }
+        alert("Gracias por su compra");
+        clearCart();
+    }
 
     const values = {
         cart,
@@ -35,7 +45,9 @@ export const CartProvider = ({ children }) => {
         addItem,
         clearCart,
         getTotalItems,
-        deleteItem
+        checkout,
+        deleteItem,
+        total
     };
 
     return (
