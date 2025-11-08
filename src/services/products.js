@@ -14,6 +14,19 @@ export const createProduct = async (product) => {
   const result = await res.json();
   return result;
 };
+export const deleteProduct = async (id) => {
+  if (!id) throw new Error("Se requiere un id para eliminar el producto");
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error("No se pudo eliminar el producto");
+  }
+
+  const result = await res.json();
+  return result;
+};
 
 export const getProduct = async (id) => {
   if (!id) throw new Error("Se requiere un id para obtener el producto");

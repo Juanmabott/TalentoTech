@@ -103,11 +103,73 @@
   cursor: not-allowed;
 }
 
+/* Wrapper para el layout de administración */
+.product-admin-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start; /* no estirar hijos, mantener altura según contenido */
+  width: 100%;
+  padding: 1rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Panel de eliminación: fijo y a la izquierda en pantallas grandes */
+.product-delete {
+  background: #212121;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* menos separación para que el ID no quede tan separado */
+  
+  border-radius: 10px;
+  color: #fff;
+  border: 1px solid #333;
+  /* mantener tamaño según su contenido, no estirar */
+}
+
+/* compactar título dentro del panel de eliminación */
+.product-delete h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+}
+
+/* Asegurar que el formulario principal ocupe el resto */
+.product-admin-wrapper .product-form {
+  flex: 1 1 auto;
+  margin: 0;
+  max-width: 720px; /* evitar que el formulario se extienda demasiado */
+}
+
+/* Botón de eliminación (peligro) */
+.btn.danger {
+  background: #ff6b6b;
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+.btn.danger:hover {
+  background: #ff8383;
+}
+
 /* Layout responsive (opcional, si más adelante querés dos columnas) */
 @media (min-width: 640px) {
   .product-form .row-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+  }
+}
+
+/* Responsive: en pantallas pequeñas apilar verticalmente */
+@media (max-width: 768px) {
+  .product-admin-wrapper {
+    flex-direction: column;
+  }
+  .product-delete {
+    width: 100%;
+    flex: none;
   }
 }

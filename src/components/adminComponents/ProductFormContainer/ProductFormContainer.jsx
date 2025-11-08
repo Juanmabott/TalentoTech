@@ -2,13 +2,13 @@ import { useState } from "react";
 import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
 import { validateProduct } from "../../../utils/validateProducts";
 import { uploadToImgbb } from "../../../services/uploadImage";
-import { createProduct } from "../../../services/products";
+import { createProduct, deleteProduct } from "../../../services/products";
 
 import "../ProductFormContainer/ProductFormContainer.css";
 
 export const ProductFormContainer = () => {
   const [loading, setLoading] = useState();
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({});
   const [file, setFile] = useState(null);
   const [product, setProduct] = useState({
     name: "",
@@ -16,6 +16,8 @@ export const ProductFormContainer = () => {
     category: "",
     description: "",
   });
+  const [deleteId, setDeleteId] = useState("");
+  const [deleteLoading, setDeleteLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -54,6 +56,28 @@ export const ProductFormContainer = () => {
     }
   };
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    if (!deleteId) {
+      setErrors((prev) => ({ ...prev, delete: "Se requiere un id para eliminar" }));
+      return;
+    }
+    setDeleteLoading(true);
+    try {
+      await deleteProduct(deleteId);
+      alert(`Producto con id ${deleteId} eliminado`);
+      setDeleteId("");
+      setErrors((prev) => {
+        const { delete: _, ...rest } = prev || {};
+        return rest;
+      });
+    } catch (error) {
+      setErrors((prev) => ({ ...prev, delete: error.message }));
+    } finally {
+      setDeleteLoading(false);
+    }
+  };
+
   return (
     <ProductFormUI
       product={product}
@@ -62,6 +86,11 @@ export const ProductFormContainer = () => {
       onFileChange={setFile}
       loading={loading}
       onSubmit={handleSubmit}
+      // props para eliminar
+      deleteId={deleteId}
+      onDeleteChange={setDeleteId}
+      onDelete={handleDelete}
+      deleting={deleteLoading}
     />
   );
 };
