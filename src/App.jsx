@@ -6,6 +6,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { Cart } from "./components/Cart/Cart";
 import { CartProvider } from "./components/context/CartProvider";
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
 
 function CategoryItemList() {
   const { category } = useParams();
@@ -30,6 +31,8 @@ function App() {
               />
               <Route path="/detail/:id" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/admin" element={<ProductFormContainer />} />
+
             </Routes>
           </div>
           <Footer />
