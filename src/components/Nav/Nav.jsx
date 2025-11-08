@@ -16,10 +16,10 @@ export const Nav = () => {
           <Link to={"/"}>Home</Link>
         </li>
         <li>
-          <Link to={"/category/ropa-superior"}>Superior</Link>
+          <Link to={"/category/Superior"}>Superior</Link>
         </li>
         <li>
-          <Link to={"/category/ropa-inferior"}>Inferior</Link>
+          <Link to={"/category/Inferior"}>Inferior</Link>
         </li>
         <li>
           <Link to={"/cart"}>
