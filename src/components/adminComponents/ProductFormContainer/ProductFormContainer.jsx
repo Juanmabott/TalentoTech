@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
+import { ProductFormUI } from "../ProductFormUi/ProductFormUI";
 import { validateProduct } from "../../../utils/validateProducts";
 import { uploadToImgbb } from "../../../services/uploadImage";
 import { createProduct, deleteProduct } from "../../../services/products";
