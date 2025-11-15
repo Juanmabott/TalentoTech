@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import { Item } from "../Item/Item";
-import "./itemList.css";
 
 export const ItemList = ({ lista }) => {
   return (
     <>
       {lista.length ? (
-        // envolver el mapeo en el contenedor grid (clase en CSS)
-        <div className="item-list-grid">
-          {lista.map((prod) => (
-            <Link to={`/detail/${prod.id}`} key={prod.id}>
-              <Item {...prod} />
-            </Link>
-          ))}
+        <div className="container">
+          <div className="row gx-3 gy-4">
+            {lista.map((prod) => (
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3" key={prod.id}>
+                <Link to={`/detail/${prod.id}`} className="text-decoration-none text-reset">
+                  <Item {...prod} />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       ) : (
         <p>No hay productos</p>

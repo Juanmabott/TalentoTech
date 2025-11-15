@@ -3,36 +3,62 @@ import "./Cart.css";
 import { useCartContext } from "../context/CartContext/useCartContext";
 
 export const Cart = () => {
-  const { cart, clearCart, deleteItem, checkout,total , getTotalItems} = useCartContext();
+  const { cart, clearCart, deleteItem, checkout, total, getTotalItems } = useCartContext();
 
   if (!cart.length) {
     return (
-      <section className="cart">
-        <h2>Tu carrito está vacío</h2>
+      <section className="cart container mt-5 text-white">
+        <div
+          className="alert alert-secondary text-center"
+          role="alert"
+          style={{ backgroundColor: "#0b1b05a2", borderColor: "#333", color: "#f5f5f5" }}
+        >
+          <h2 className="mb-0">Tu carrito está vacío</h2>
+        </div>
       </section>
     );
   }
 
   return (
-    <section className="cart">
-      <h2>Carrito</h2>
-      <ul>
+    <section className="cart container mt-4 text-white">
+      <h2 className="mb-4">Carrito</h2>
+
+      <ul className="list-group mb-3">
         {cart.map((item) => (
-          <li key={item.id} className="cart-item">
-            <div className="cart-item-left">
-              <strong>{item.title}</strong>
-              <div className="cart-item-qty">Cantidad: {item.quantity}</div>
-              <div className="btn btn-minus" onClick={() => deleteItem(item.id)}>- </div>
+          <li
+            key={item.id}
+            className="list-group-item d-flex justify-content-between align-items-start bg-transparent text-white"
+            style={{ borderColor: "rgba(255,255,255,0.04)" }}
+          >
+            <div>
+              <strong className="d-block">{item.title || item.name}</strong>
+              <small style={{ color: "#f5f5f5" }}>Cantidad: {item.quantity}</small>
             </div>
-            <div className="cart-item-right">${(item.price * item.quantity).toFixed(2)}</div>
+
+            <div className="d-flex align-items-center gap-3">
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-light"
+                onClick={() => deleteItem(item.id)}
+                aria-label={`Eliminar ${item.title || item.name}`}
+              >
+                &minus;
+              </button>
+              <div className="fw-bold">${(item.price * item.quantity).toFixed(2)}</div>
+            </div>
           </li>
         ))}
       </ul>
-      <div className="cart-footer">
-        <button onClick={clearCart}>Vaciar carrito</button>
-        <button className="btn btn-primary" onClick={checkout}>Comprar</button>
-        <strong>Cantidad: {getTotalItems()}</strong>
-        <strong>Total: ${total().toFixed(2)}</strong>
+
+      <div className="row align-items-center text-white">
+        <div className="col-md-6 d-flex gap-2">
+          <button className="btn btn-secondary" onClick={clearCart}>Vaciar carrito</button>
+          <button className="btn btn-warning" onClick={checkout}>Comprar</button>
+        </div>
+        <div className="col-md-6 text-md-end mt-3 mt-md-0">
+          <div className="mb-1">Cantidad: <strong>{getTotalItems()}</strong></div>
+          <div>Total: <strong>${total().toFixed(2)}</strong></div>
+        </div>
       </div>
     </section>
   );

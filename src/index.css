@@ -106,3 +106,28 @@ html {
     background-color: #f9f9f9;
   }
 }
+
+/* Ensure site uses the dark theme colors after importing Bootstrap which sets its own defaults. */
+body,
+.app-wrapper,
+.nav-inner,
+.main-content,
+header,
+footer,
+.card,
+.card *,
+.btn,
+p,
+h1,h2,h3,h4,h5,h6,
+label,
+small {
+  color: rgba(255, 255, 255, 0.87) !important;
+}
+
+/* Keep links styled as defined earlier (accent color) */
+a {
+  color: #ffffffff !important;
+}
+a:hover {
+  color: #c7a841ff !important;
+}
