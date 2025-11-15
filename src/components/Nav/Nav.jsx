@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
-import { useCartContext } from "../context/useCartContext";
+import { useCartContext } from "../context/CartContext/useCartContext";
+import { useAuthContext } from "../context/AuthContext/useAuthContext";
 import "./Nav.css";
-
 export const Nav = () => {
 
-    const {getTotalItems} = useCartContext();
+  const {getTotalItems} = useCartContext();
+  const { user, logout } = useAuthContext();
   //Dejamos los Link preparados para cuando hagamos filtrado por categoria
   //Por ahora, quedan de vista, pero sirven al tocar para escribir la ruta
   //en la barra de busqueda
@@ -28,6 +29,13 @@ export const Nav = () => {
               <span className="cart-badge">{getTotalItems()}</span>
             )}
           </Link>
+        </li>
+        <li>
+          {user ? (
+            <button onClick={logout}>Logout</button>
+          ) : (
+            <Link to={"/login"}>Login</Link>
+          )}
         </li>
       </ul>
     </nav>

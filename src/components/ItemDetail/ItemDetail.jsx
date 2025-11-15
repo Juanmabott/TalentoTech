@@ -1,5 +1,5 @@
 import { Item } from "../Item/Item";
-import { useCartContext } from "../context/useCartContext";
+import { useCartContext } from "../context/CartContext/useCartContext";
 import { Count } from "../count/Count";
 export const ItemDetail = ({ detail }) => {
   const { addItem } = useCartContext();
