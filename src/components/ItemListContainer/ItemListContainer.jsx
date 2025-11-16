@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemList } from "../ItemList/ItemList";
-import { getAllProducts } from "../../services/products";
+import { getAllProducts, getProductsByCategory } from "../../services/products";
 
 export const ItemListContainer = ({ titulo }) => {
   const [products, setProducts] = useState([]);
@@ -11,10 +11,9 @@ export const ItemListContainer = ({ titulo }) => {
     (async () => {
       try {
         const data = await getAllProducts();
-        // Si hay una categoría en la ruta, filtrar los productos por esa categoría
         if (category) {
-          const filtered = data.filter((p) => p.category === category);
-          setProducts(filtered);
+          
+          setProducts(await getProductsByCategory(category));
         } else {
           setProducts(data);
         }

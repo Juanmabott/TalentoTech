@@ -50,3 +50,15 @@ export const getAllProducts = async () => {
   const result = await res.json();
   return result;
 };
+
+export const getProductsByCategory = async (category) => { 
+  if (!category) throw new Error("Se requiere una categoría para filtrar los productos");
+  const res = await fetch(`${BASE_URL}?category=${category}`);
+
+  if (!res.ok) {
+    throw new Error("No se pudieron obtener los productos por categoría");
+  }
+
+  const result = await res.json();
+  return result;
+};
