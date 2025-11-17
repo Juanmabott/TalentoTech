@@ -1,4 +1,4 @@
-# 👔 Pre-Entrega React - TalentoTech - E-Commerce de Ropa
+# 👔 TalentoTech - E-Commerce de Ropa
 
 ## 🛍️ Descripción del proyecto
 Este proyecto forma parte de la formación académica del programa **TalentoTech**, dentro del módulo de **Desarrollo Frontend con React**.  
@@ -47,3 +47,4 @@ como parte del curso **TalentoTech - Desarrollo Frontend con React**.
 📫 GitHub: [Juanmabott](https://github.com/Juanmabott)  
 🏫 Institución: **TalentoTech**  
 Programa de formación tecnológica orientado al desarrollo de habilidades digitales y la empleabilidad en tecnología.
+
