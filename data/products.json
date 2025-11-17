@@ -1,0 +1,47 @@
+[
+  {
+    "id": "rs-001",
+    "title": "Camiseta básica blanca",
+    "price": 19.99,
+    "description": "Camiseta de algodón 100% con corte clásico.",
+    "category": "ropa-superior",
+    "image": "/data/1.jpg",
+    "stock": 25
+  },
+  {
+    "id": "rs-002",
+    "title": "Sudadera con capucha",
+    "price": 49.99,
+    "description": "Sudadera cómoda, ideal para uso diario.",
+    "category": "ropa-superior",
+    "image": "https://i.pinimg.com/1200x/ad/01/e1/ad01e1c13e50d78f64d215353cee5b49.jpg",
+    "stock": 12
+  },
+  {
+    "id": "ri-001",
+    "title": "Jeans ajustados",
+    "price": 39.99,
+    "description": "Jeans elásticos de corte moderno.",
+    "category": "ropa-inferior",
+    "image": "https://i.pinimg.com/736x/e4/40/bd/e440bd6069fe4b239c68e82d8f0bf910.jpg",
+    "stock": 18
+  },
+  {
+    "id": "ri-002",
+    "title": "Pantalón chino",
+    "price": 44.99,
+    "description": "Pantalón versátil, perfecto para oficina y fin de semana.",
+    "category": "ropa-inferior",
+    "image": "https://i.pinimg.com/1200x/85/fa/9f/85fa9f0ac8d9555d3fa991f0073ebf8a.jpg",
+    "stock": 10
+  },
+  {
+    "id": "ac-001",
+    "title": "Gorra deportiva",
+    "price": 14.99,
+    "description": "Gorra ligera con ajuste trasero.",
+    "category": "accesorios",
+    "image": "https://i.pinimg.com/1200x/dc/bf/ed/dcbfed5961506f2890ae2c9b8453cc67.jpg",
+    "stock": 30
+  }
+]
