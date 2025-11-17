@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext/useCartContext";
 import { useAuthContext } from "../context/AuthContext/useAuthContext";
+import logo from "/logo.png";
 import "./Nav.css";
 export const Nav = () => {
 
@@ -13,7 +14,9 @@ export const Nav = () => {
     <nav>
       <ul>
         <li className="nav-brand">
-          <Link to={"/"}><img className="nav-logo" src="/logo.png" alt="Logo de la tienda" /></Link>
+          <Link to={"/"}>
+            <img className="nav-logo" src={logo} alt="Logo de la tienda" />
+          </Link>
           <Link to={"/"}>Home</Link>
         </li>
         <li>
