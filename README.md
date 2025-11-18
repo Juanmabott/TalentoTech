@@ -38,7 +38,8 @@ La aplicación simula un e-commerce donde se pueden visualizar prendas de forma 
 
 [https://talentotechjuanmabott.netlify.app](https://talentotechjuanmabott.netlify.app)
 
-** (si no funciona netlify)** 
+**si no funciona netlify** 
+
 [https://juanmabott.github.io/TalentoTech](https://juanmabott.github.io/TalentoTech)
 
 
@@ -52,6 +53,7 @@ como parte del curso **TalentoTech - Desarrollo Frontend con React**.
 📫 GitHub: [Juanmabott](https://github.com/Juanmabott)  
 🏫 Institución: **TalentoTech**  
 Programa de formación tecnológica orientado al desarrollo de habilidades digitales y la empleabilidad en tecnología.
+
 
 
 
