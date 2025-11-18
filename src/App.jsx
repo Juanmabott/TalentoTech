@@ -20,7 +20,7 @@ function CategoryItemList() {
 function App() {
   return (
     <>
-      <BrowserRouter basename="/TalentoTech">
+      <BrowserRouter>
         <AuthProvider>
           <CartProvider>
             <Routes>
